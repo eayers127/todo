@@ -1,15 +1,15 @@
 let todos = [
     {
-        id: 0, name: 'Walk Dog', completed: false, due: '09/03/23',
+        id: 0, name: 'Walk Dog', completed: false, due: '09/03/23', category: 'exercise',
     },
     {
-        id: 1, name: 'Do Homework', completed: false, due: '09/10/23',
+        id: 1, name: 'Do Homework', completed: false, due: '09/10/23', category: 'school',
     },
     {
-        id: 2, name: 'Wash dishes', completed: true, due: '09/01/23',
+        id: 2, name: 'Wash dishes', completed: true, due: '09/01/23', category: 'house',
     },
     {
-        id: 3, name: 'Clean room', completed: false, due: '09/08/23',
+        id: 3, name: 'Clean room', completed: false, due: '09/08/23', category: 'house',
     },
 ]
 
@@ -44,7 +44,7 @@ showTodos(todos);
 
 function addTodo() {
     let newText = document.querySelector('#inputTodo').value;
-    let newTodo = {id: 6, name: newText, completed: false, due: '09/02/23'}
+    let newTodo = {id: 6, name: newText, completed: false, due: '09/02/23', category: 'undefined'}
     //todos = [...todos, newTodo]
     todos.push(newTodo);
     showTodos(todos);
