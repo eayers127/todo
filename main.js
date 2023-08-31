@@ -13,7 +13,8 @@ let todos = [
     },
 ]
 
-const button = document.getElementById('addBtn')
+const addButton = document.getElementById('addBtn')
+const removeButton = document.getElementById('removeBtn')
 const todoList = document.getElementById('todosList')
 
 function showTodos(todos){
@@ -21,10 +22,19 @@ function showTodos(todos){
 
     todos.forEach((todo) =>{
         let item = document.createElement('li');
+        let checkbox = document.createElement('input');
+        checkbox.type = "checkbox";
         let todoText = document.createTextNode(todo.name);
         item.append(todoText);
+        item.append(checkbox);
 
         todoList.append(item);
+
+        // if(checkbox.checked){
+        //     todo.completed = true;
+        // }else{
+        //     todo.completed = false;
+        // }
     })
 }
 
@@ -44,9 +54,11 @@ function addTodo() {
 console.log(todos)
 
 function removeTodo() {
-    todos.splice();
+    todos.pop();
+    showTodos(todos);
 }
 
 
 
-button.addEventListener("click", addTodo)
+addButton.addEventListener("click", addTodo)
+removeButton.addEventListener("click", removeTodo)
